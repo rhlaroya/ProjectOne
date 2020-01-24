@@ -11,7 +11,7 @@ public interface DaoContract <T> {
 	
 	T getById(int id);
 	
-	void update(T t, String[] params);
+	void update(T t);
 	
 	void insert(T t);
 	
