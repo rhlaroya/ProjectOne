@@ -1,7 +1,7 @@
 package jdbc.util.config.plain;
 
 public class PlainTextConfig {
-	private static final String url = "jdbc:postgresql://regaedb.ce8a70kibcmu.us-east-2.rds.amazonaws.com:5432/postgres";
+	private static final String url = "jdbc:postgresql://regaedb.ce8a70kibcmu.us-east-2.rds.amazonaws.com:5432/projectone?currentSchema=ersystem";
 	private static final String username = "admin";
 	private static final String password = "password";
 	

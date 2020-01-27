@@ -11,9 +11,9 @@ public interface DaoContract <T> {
 	
 	T getById(int id);
 	
-	void update(T t);
+	int update(T t);
 	
-	void insert(T t);
+	int insert(T t);
 	
-	void delete(T t);
+	int delete(T t);
 }

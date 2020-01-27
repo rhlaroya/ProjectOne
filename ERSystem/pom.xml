@@ -5,7 +5,7 @@
   <groupId>com.ers</groupId>
   <artifactId>ERSystem</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>ERSystem</name>
   <url>http://maven.apache.org</url>
@@ -33,5 +33,10 @@
 	  <artifactId>log4j</artifactId>
 	  <version>1.2.17</version>
 	</dependency>
+	<dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    <version>2.10.1</version>
+</dependency>
   </dependencies>
 </project>
