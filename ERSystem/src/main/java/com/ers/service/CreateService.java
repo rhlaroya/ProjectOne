@@ -1,5 +1,6 @@
 package com.ers.service;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import com.ers.DAO.ReimbursementDao;
@@ -10,7 +11,7 @@ import com.ers.model.User;
 public class CreateService {
 	
 	public static void createReimbursement(int id, int amount, Timestamp submitted, Timestamp resolved,
-			String description, byte receipt, int author, int resolver, int status_id, int type_id) {
+			String description, byte receipt, int author, int resolver, int status_id, int type_id) throws ClassNotFoundException, SQLException {
 		 int result = new ReimbursementDao().insert(new Reimbursement(id,amount,submitted,resolved,description,receipt,author,
 				resolver,status_id,type_id));
 	}

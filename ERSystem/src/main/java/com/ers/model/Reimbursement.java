@@ -117,6 +117,17 @@ public class Reimbursement {
 		this.type_id = type_id;
 	}
 	
+	public Reimbursement(int amount, Timestamp submitted, String description, 
+			int author, int status_id, int type_id) {
+		super();
+		this.amount = amount;
+		this.submitted = submitted;
+		this.description = description;
+		this.author = author;
+		this.status_id = status_id;
+		this.type_id = type_id;
+	}
+	
 	/**
 	 * Reimbursement toString
 	 */

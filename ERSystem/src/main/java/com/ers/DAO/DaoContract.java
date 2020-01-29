@@ -1,5 +1,6 @@
 package com.ers.DAO;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ public interface DaoContract <T> {
 	
 	int update(T t);
 	
-	int insert(T t);
+	int insert(T t) throws SQLException, ClassNotFoundException;
 	
 	int delete(T t);
 }

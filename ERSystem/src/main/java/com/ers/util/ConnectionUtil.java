@@ -14,7 +14,7 @@ public class ConnectionUtil {
 			conn = DriverManager.getConnection(PlainTextConfig.getUrl(),
 					PlainTextConfig.getUsername(), PlainTextConfig.getPassword());
 			
-			
+		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

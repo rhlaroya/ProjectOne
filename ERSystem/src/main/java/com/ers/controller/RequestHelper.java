@@ -1,15 +1,20 @@
 package com.ers.controller;
 
+import java.security.NoSuchAlgorithmException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ers.controller.LoginController;
+
 public class RequestHelper {
 
-	public static String process(HttpServletRequest req) {
+	public static String process(HttpServletRequest req) throws NoSuchAlgorithmException {
 		switch(req.getRequestURI()) {
-		case "ERSystem/create.reimb":
+		case "/ERSystem/html/create.reimb":
 			return CreateController.createRmbrsmt(req);
-			
+		case "/ERSystem/html/login.go":
+			return LoginController.login(req);
 		default:
 			return "";
 		}	

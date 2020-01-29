@@ -1,6 +1,7 @@
 package com.ers.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,12 +23,21 @@ public class CreateController {
 		int resolver = Integer.parseInt(req.getParameter("resolver"));
 		int status_id = Integer.parseInt(req.getParameter("status_id"));
 		int type_id = Integer.parseInt(req.getParameter("type_id"));
-		CreateService.createReimbursement(id, amount, submitted, resolved, description, receipt, author, resolver, status_id, type_id);
+		try {
+			CreateService.createReimbursement(id, amount, submitted, resolved, description, receipt, author, resolver, status_id, type_id);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		createFromJson(req);
-		return "index.html";
+		return "./index.html";
 	}
 	
 	public static String createUsr(HttpServletRequest req) {
+		System.out.println("Creating user");
 		int user_id = Integer.parseInt(req.getParameter("user_id"));
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
@@ -35,9 +45,9 @@ public class CreateController {
 		String last_name = req.getParameter("last_name");
 		String email = req.getParameter("email");
 		int role_id = Integer.parseInt(req.getParameter("role_id"));
-		CreateService.createUser(user_id, username, password, first_name, last_name, email, role_id);
+		CreateService.createUser(user_id, username, password, first_name, last_name, email, role_id);	
 		createFromJson(req);
-		return "index.html";
+		return "./index.html";
 	}
 	
 	public static void createFromJson(HttpServletRequest req) {

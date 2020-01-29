@@ -14,18 +14,24 @@
         <div class="row d-flex justify-content-center">
             <div class="col">
                 <div class="row d-flex justify-content-center">
-                  <form class="form-signin" action="login.go" method="post">
+                  <form class="form" action="/ERSystem/ReimbursementServlet" method="post">
                       <br>
                       <br>
-                      <img src="../assets/Logo.png" alt="Logo" width="298px" height="128px">
-                      <h1 class="">Login</h1>
-                      <input type="text" name="user" placeholder="username">
-                        <br>
-                        <input type="password" name="pass" placeholder="password">
-                        <br>
-                        <br>
-                        <input id="submitbut" class="btn btn-danger" type="submit" value="Login">   
+                      <select name="type">
+                        <option value="null">Reimbursement Type</option>
+                        <option value="1">Lodging</option>
+                        <option value="2">Travel</option>
+                        <option default value="3">Food</option>
+                        <option value="4">Others</option>
+                    </select>
+                    <input type="text" name="description" placeholder="description">
+                    <input type="text" name="amount" placeholder="amount">
+                    <br>
+                    <input type="submit" class="btn btn-lg btn-block btn-danger" value="submit">
                   </form>
+                </div>
+                <div>
+                    
                 </div>
             </div>
         </div>
