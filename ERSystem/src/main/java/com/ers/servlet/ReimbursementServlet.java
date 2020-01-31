@@ -50,6 +50,9 @@ public class ReimbursementServlet extends HttpServlet {
 			request.getRequestDispatcher(RequestHelper.process(request)).forward(request,response);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		//create reimbursement
 		int type = Integer.parseInt(request.getParameter("type"));

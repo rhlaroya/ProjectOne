@@ -12,7 +12,7 @@ public interface DaoContract <T> {
 	
 	T getById(int id);
 	
-	int update(T t);
+	int update(T t) throws ClassNotFoundException, SQLException;
 	
 	int insert(T t) throws SQLException, ClassNotFoundException;
 	

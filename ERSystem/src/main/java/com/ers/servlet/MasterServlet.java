@@ -2,8 +2,9 @@
 
 	import java.io.IOException;
 	import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
 
-	import javax.servlet.ServletException;
+import javax.servlet.ServletException;
 	import javax.servlet.annotation.WebServlet;
 	import javax.servlet.http.HttpServlet;
 	import javax.servlet.http.HttpServletRequest;
@@ -16,7 +17,12 @@
 		
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			RequestHelper.directProcess(req, resp);
+			try {
+				RequestHelper.directProcess(req, resp);
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 //			req.getRequestDispatcher("html/employee.html").forward(req, resp);
 		}
 		
@@ -27,11 +33,19 @@
 			} catch (NoSuchAlgorithmException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 		
 		@Override
 		protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			RequestHelper.directProcess(req, resp);
+			try {
+				RequestHelper.directProcess(req, resp);
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}

@@ -20,5 +20,23 @@
     <url-pattern>/ReimbursementServlet</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <description></description>
+    <display-name>LoginController</display-name>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>com.ers.controller.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+  
+
+  
+  <error-page>
+   <error-code>404</error-code>
+   <location>/html/404.html</location>
+  </error-page>
+  
 
 </web-app>

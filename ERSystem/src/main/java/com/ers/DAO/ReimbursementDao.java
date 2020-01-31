@@ -51,6 +51,26 @@ public class ReimbursementDao implements DaoContract<Reimbursement> {
 		}
 		return null;
 	}
+	
+	public ArrayList<Reimbursement> getReimbEmp(int id) throws ClassNotFoundException, SQLException {
+			Class.forName("org.postgresql.Driver");
+	        Connection con = DriverManager.getConnection("jdbc:postgresql://regaedb.ce8a70kibcmu.us-east-2.rds.amazonaws.com:5432/projectone","admin", "password");
+		ArrayList<Reimbursement> reimb = new ArrayList<>();
+		try {
+			//Connection conn = ConnectionUtil.connect();
+			PreparedStatement ps = con.prepareStatement("select *  from ersystem.\"ers-reimbursement\" join ersystem.\"ers-users\" on "
+					+ "ersystem.\"ers-reimbursement\".reimb_author = ersystem.\"ers-users\".ers_users_id where reimb_author = ?");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				reimb.add( new Reimbursement(rs.getInt(1),rs.getInt(2),rs.getTimestamp(3),rs.getTimestamp(4),
+						rs.getString(5),rs.getByte(6),rs.getInt(7),rs.getInt(8),rs.getInt(9),rs.getInt(10)));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return reimb;
+	}
 
 	@Override
 	public int update(Reimbursement t) {
