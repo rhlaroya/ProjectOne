@@ -22,7 +22,8 @@ public class JacksonController {
 
 	public static void sendReimbursement(HttpServletRequest req, HttpServletResponse resp) throws ClassNotFoundException, SQLException {
 		new ReimbursementService();
-		int i = (int) req.getAttribute("id");
+		HttpSession session = req.getSession();
+		int i = (int) session.getAttribute("id");
 		
 //		Integer i= (Integer) session.getAttribute("id");
 		List<Reimbursement> r = ReimbursementService.getById(i);
@@ -63,6 +64,40 @@ public class JacksonController {
 			.write(
 					new ObjectMapper()
 					.writeValueAsString(u));
+			
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void sendAllReimbursement(HttpServletRequest req, HttpServletResponse resp) throws ClassNotFoundException, SQLException {
+		new ReimbursementService();
+		HttpSession session = req.getSession();
+		int i = (int) session.getAttribute("id");
+		
+//		Integer i= (Integer) session.getAttribute("id");
+		List<Reimbursement> r = ReimbursementService.getAll();
+		try {
+			
+		
+		  //  final ByteArrayOutputStream out = new ByteArrayOutputStream();
+		  //  final ObjectMapper mapper = new ObjectMapper();
+			
+				// resp.getWriter(mapper.writeValue(out, r));
+		/**	 resp.setContentType("application/json");
+			 resp.getWriter()
+			.write(
+					new ObjectMapper()
+					.writeValueAsString(r));  */
+			
+		    //serialize object errors. 
+		    ObjectMapper mapper = new ObjectMapper();
+		    mapper.enable(SerializationFeature.INDENT_OUTPUT);
+		    String errorsJson = mapper.writeValueAsString(r);        
+		    resp.setContentType("application/json");
+		    resp.getWriter().write(errorsJson);
 			
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();

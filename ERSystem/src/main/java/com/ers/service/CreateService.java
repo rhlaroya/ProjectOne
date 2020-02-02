@@ -17,7 +17,7 @@ public class CreateService {
 	}
 	
 	public static void createUser(int user_id, String username, String password, String first_name, String last_name, String email,
-			int role_id) {
+			int role_id) throws ClassNotFoundException {
 		int result = new UserDao().insert(new User(user_id, username, password, first_name, last_name, email,role_id));
 	}
 	

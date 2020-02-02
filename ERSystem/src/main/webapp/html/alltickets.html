@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>All Tickets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <script src='../js/alltickets.js'></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col">
+               <h2>Welcome! Manager</h2>
+               <h1>All Reimbursements</h1>
+               <br>
+               <table class="table table-bordered table-striped table-dark" id="tabledata">
+               		<thead>
+               			<tr>
+                            <th onclick="test()">ID</th>
+               				<th onclick="">Amount</th>
+                            <th onclick="">Date Submitted</th>
+                            <th onclick="">Date Resolved</th>
+                            <th onclick="">Description</th>
+                            <th onclick="">Author</th>
+                            <th onclick="">Resolver</th>
+               				<th onclick="sortType()">Type</th>
+                               <th>Status</th>
+                               <th>
+
+                                </th>
+               			</tr>
+               		</thead>
+               		<tbody>
+               		</tbody>
+               </table>   
+               <button type="button" class="btn btn-danger">Logout</button>            
+            </div>
+        </div>
+    </div>
+</body>
+</html>

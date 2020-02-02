@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ers.controller.LoginController;
+import com.ers.service.UserService;
 
 public class RequestHelper {
 
@@ -17,6 +18,8 @@ public class RequestHelper {
 			return CreateController.createRmbrsmt(req);
 		case "/ERSystem/html/login.go":
 			return LoginController.login(req);
+//		case "/ERSystem/html/login.go":
+//			return UserService.getById(id)
 		default:
 			return "";
 		}	
@@ -32,6 +35,10 @@ public class RequestHelper {
 				break;
 		case "/ERSystem/create.json":
 			CreateController.createFromJson(req);
+			break;
+		case "/ERSystem/reimball.json":
+			JacksonController.sendAllReimbursement(req, resp);
+			
 		break;
 	}
 	}

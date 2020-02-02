@@ -88,6 +88,8 @@ public class User {
 		this.role_id = role_id;
 	}
 	
+	
+	
 	/**
 	 * User toString
 	 */

@@ -19,8 +19,7 @@
     <servlet-name>ReimbursementServlet</servlet-name>
     <url-pattern>/ReimbursementServlet</url-pattern>
   </servlet-mapping>
-  
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>LoginController</display-name>
     <servlet-name>LoginController</servlet-name>
@@ -30,13 +29,58 @@
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
-  
-
-  
   <error-page>
-   <error-code>404</error-code>
-   <location>/html/404.html</location>
+    <error-code>404</error-code>
+    <location>/html/404.html</location>
   </error-page>
-  
-
+  <servlet>
+    <description></description>
+    <display-name>Logout</display-name>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.ers.servlet.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Registration</display-name>
+    <servlet-name>Registration</servlet-name>
+    <servlet-class>com.ers.servlet.Registration</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Registration</servlet-name>
+    <url-pattern>/Registration</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApproveRegistration</display-name>
+    <servlet-name>ApproveRegistration</servlet-name>
+    <servlet-class>com.ers.servlet.ApproveRegistration</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApproveRegistration</servlet-name>
+    <url-pattern>/ApproveRegistration</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApproveReimb</display-name>
+    <servlet-name>ApproveReimb</servlet-name>
+    <servlet-class>com.ers.servlet.ApproveReimb</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApproveReimb</servlet-name>
+    <url-pattern>/ApproveReimb</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DenyReimb</display-name>
+    <servlet-name>DenyReimb</servlet-name>
+    <servlet-class>com.ers.servlet.DenyReimb</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DenyReimb</servlet-name>
+    <url-pattern>/DenyReimb</url-pattern>
+  </servlet-mapping>
 </web-app>

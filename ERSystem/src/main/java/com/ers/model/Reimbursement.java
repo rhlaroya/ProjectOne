@@ -2,6 +2,8 @@ package com.ers.model;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Reimbursement {
 	
 	/**
@@ -33,12 +35,16 @@ public class Reimbursement {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy HH:mm")
 	public Timestamp getSubmitted() {
 		return submitted;
 	}
 	public void setSubmitted(Timestamp submitted) {
 		this.submitted = submitted;
 	}
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy HH:mm")
 	public Timestamp getResolved() {
 		return resolved;
 	}
@@ -126,6 +132,13 @@ public class Reimbursement {
 		this.author = author;
 		this.status_id = status_id;
 		this.type_id = type_id;
+	}
+	
+	public Reimbursement(Timestamp resolved, int resolver, int status, int id) {
+		this.id = id;
+		this.resolved = resolved;
+		this.resolver = resolver;
+		this.status_id = status;
 	}
 	
 	/**

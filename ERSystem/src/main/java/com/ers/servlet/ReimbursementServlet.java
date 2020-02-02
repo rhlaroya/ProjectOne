@@ -59,7 +59,8 @@ public class ReimbursementServlet extends HttpServlet {
 			int amount = Integer.parseInt(request.getParameter("amount"));
 			String desc = request.getParameter("description");
 			Timestamp time = new Timestamp(System.currentTimeMillis());
-			int id = 2;
+			HttpSession session = request.getSession();
+			int id = (int) session.getAttribute("id");
 			int status = 1;
 			ReimbursementDao rd = new ReimbursementDao();
 			try {
@@ -68,50 +69,6 @@ public class ReimbursementServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			response.sendRedirect("html/reimbcreate.html");
+			
 	}
-	
-	
-	
-	
-	//MASTER SERVLET EXAMPLE
-//	package com.ers.servlet;
-//
-//	import java.io.IOException;
-//	import java.security.NoSuchAlgorithmException;
-//
-//	import javax.servlet.ServletException;
-//	import javax.servlet.annotation.WebServlet;
-//	import javax.servlet.http.HttpServlet;
-//	import javax.servlet.http.HttpServletRequest;
-//	import javax.servlet.http.HttpServletResponse;
-//
-//	import com.ers.controller.RequestHelper;
-//	//"*.session"
-//	@WebServlet(urlPatterns = {"*.go", "*.json"})
-//	public class MasterServlet extends HttpServlet {
-//		
-//		@Override
-//		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//			RequestHelper.directProcess(req, resp);
-////			req.getRequestDispatcher("html/employee.html").forward(req, resp);
-//		}
-//		
-//		@Override
-//		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//			try {
-//				req.getRequestDispatcher(RequestHelper.process(req)).forward(req,resp);
-//			} catch (NoSuchAlgorithmException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//		
-//		@Override
-//		protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//			RequestHelper.directProcess(req, resp);
-//		}
-//	}
-	
-
 }

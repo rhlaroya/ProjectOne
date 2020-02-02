@@ -1,6 +1,7 @@
 package com.ers.DAO;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -72,18 +73,18 @@ public class UserDao implements DaoContract<User> {
 	}
 
 	@Override
-	public int insert(User t) {
+	public int insert(User t) throws ClassNotFoundException {
 		try {
-
-			Connection conn = ConnectionUtil.connect();
-			PreparedStatement ps = conn.prepareStatement("insert into \"ers-users\" values (?,?,?,?,?,?,?);");
-			ps.setInt(1, t.getUser_id());
-			ps.setString(2, t.getUsername());
-			ps.setString(3, t.getPassword());
-			ps.setString(4, t.getFirst_name());
-			ps.setString(5, t.getLast_name());
-			ps.setString(6, t.getEmail());
-			ps.setInt(7, t.getRole_id());
+			Class.forName("org.postgresql.Driver");
+	        Connection conn = DriverManager.getConnection("jdbc:postgresql://regaedb.ce8a70kibcmu.us-east-2.rds.amazonaws.com:5432/projectone","admin", "password");
+			//Connection conn = ConnectionUtil.connect();
+			PreparedStatement ps = conn.prepareStatement("insert into ersystem.\"ers-users\" (ers_username,ers_password,ers_first_name,user_last_name,user_email,user_role_id) values (?,?,?,?,?,?);");
+			ps.setString(1, t.getUsername());
+			ps.setString(2, t.getPassword());
+			ps.setString(3, t.getFirst_name());
+			ps.setString(4, t.getLast_name());
+			ps.setString(5, t.getEmail());
+			ps.setInt(6, 2);
 			int ins = ps.executeUpdate();
 		} catch (SQLException e) {
 				e.printStackTrace();

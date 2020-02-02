@@ -36,7 +36,7 @@ public class CreateController {
 		return "./index.html";
 	}
 	
-	public static String createUsr(HttpServletRequest req) {
+	public static String createUsr(HttpServletRequest req) throws ClassNotFoundException {
 		System.out.println("Creating user");
 		int user_id = Integer.parseInt(req.getParameter("user_id"));
 		String username = req.getParameter("username");
