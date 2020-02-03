@@ -16,10 +16,38 @@ public class Reimbursement {
 	private String description;
 	private byte receipt;
 	private int author;
+	private String authorText;
 	private int resolver;
+	private String resolverText;
 	private int status_id;
+	private String status;
 	private int type_id;
+	private String type;
 	
+	public String getAuthorText() {
+		return authorText;
+	}
+	public void setAuthorText(String authorText) {
+		this.authorText = authorText;
+	}
+	public String getResolverText() {
+		return resolverText;
+	}
+	public void setResolverText(String resolverText) {
+		this.resolverText = resolverText;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	/**
 	 * Getters and Setters
 	 */
@@ -123,6 +151,20 @@ public class Reimbursement {
 		this.type_id = type_id;
 	}
 	
+	public Reimbursement(int id, int amount, Timestamp submitted, Timestamp resolved, String description, 
+			String authorText, String resolverText, String status, String type) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.submitted = submitted;
+		this.resolved = resolved;
+		this.description = description;
+		this.authorText = authorText;
+		this.resolverText = resolverText;
+		this.status = status;
+		this.type = type;
+	}
+	
 	public Reimbursement(int amount, Timestamp submitted, String description, 
 			int author, int status_id, int type_id) {
 		super();
@@ -150,10 +192,4 @@ public class Reimbursement {
 				+ ", description=" + description + ", receipt=" + receipt + ", author=" + author + ", resolver="
 				+ resolver + ", status_id=" + status_id + ", type_id=" + type_id + "]";
 	}
-	
-	
-	
-	
-	
-	
 }

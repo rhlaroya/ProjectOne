@@ -49,7 +49,4 @@ public class UserRole {
 	public String toString() {
 		return "UserRole [role_id=" + role_id + ", user_role=" + user_role + "]";
 	}
-	
-	
-	
 }

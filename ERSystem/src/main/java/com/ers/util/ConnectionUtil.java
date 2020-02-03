@@ -13,8 +13,6 @@ public class ConnectionUtil {
 		try {
 			conn = DriverManager.getConnection(PlainTextConfig.getUrl(),
 					PlainTextConfig.getUsername(), PlainTextConfig.getPassword());
-			
-		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

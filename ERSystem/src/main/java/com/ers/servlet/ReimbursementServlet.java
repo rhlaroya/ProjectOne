@@ -45,17 +45,15 @@ public class ReimbursementServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//login
 		try {
 			request.getRequestDispatcher(RequestHelper.process(request)).forward(request,response);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//create reimbursement
-		int type = Integer.parseInt(request.getParameter("type"));
+
+			int type = Integer.parseInt(request.getParameter("type"));
 			int amount = Integer.parseInt(request.getParameter("amount"));
 			String desc = request.getParameter("description");
 			Timestamp time = new Timestamp(System.currentTimeMillis());

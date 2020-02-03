@@ -50,6 +50,4 @@ public class ReimbursementStatus {
 	public String toString() {
 		return "ReimbursementStatus [status_id=" + status_id + ", status=" + status + "]";
 	}
-	
-	
 }

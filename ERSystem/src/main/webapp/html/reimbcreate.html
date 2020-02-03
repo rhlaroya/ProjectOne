@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script>
-function submitForFuckSake() {
-    var formData = new FormData(document.getElementById("addReimb")); 
-    var xmlHttp = new XMLHttpRequest();
+function submitReimb() {
+    let formData = new FormData(document.getElementById("addReimb")); 
+    let xmlHttp = new XMLHttpRequest();
     xmlHttp.open("post", "/ERSystem/ReimbursementServlet");
     xmlHttp.onreadystatechange = function()
         {
@@ -21,7 +21,7 @@ function submitForFuckSake() {
         }; 
    
    xmlHttp.send(formData);
-   alert("Data saved motherfucker!");
+   alert("Ticket submitted!");
 }
 
 
@@ -46,7 +46,7 @@ function submitForFuckSake() {
                     <input type="text" name="description" placeholder="description">
                     <input type="text" name="amount" placeholder="amount">
                     <br>
-                    <input type="submit" class="btn btn-lg btn-block btn-danger" value="submit" onClick="submitForFuckSake(); return false;">
+                    <input type="submit" class="btn btn-lg btn-block btn-danger" value="submit" onClick="submitReimb(); return false;">
                   </form>
                 </div>
                 <div>

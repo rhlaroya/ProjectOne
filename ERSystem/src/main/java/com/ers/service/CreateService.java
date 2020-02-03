@@ -20,6 +20,4 @@ public class CreateService {
 			int role_id) throws ClassNotFoundException {
 		int result = new UserDao().insert(new User(user_id, username, password, first_name, last_name, email,role_id));
 	}
-	
-	
 }

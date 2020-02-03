@@ -9,11 +9,11 @@ import com.ers.model.Reimbursement;
 
 public class ReimbursementService {
 	
-	public static ArrayList<Reimbursement> getById(int id) throws ClassNotFoundException, SQLException {
+	public static ArrayList<String[]> getById(int id) throws ClassNotFoundException, SQLException {
 		return new ReimbursementDao().getReimbEmp(id);
 	}
 	
-	public static List<Reimbursement> getAll() throws ClassNotFoundException, SQLException {
+	public static List<String[]> getAll() throws ClassNotFoundException, SQLException {
 		return new ReimbursementDao().getAll();
 	}
 }

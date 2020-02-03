@@ -2,6 +2,7 @@ package com.ers.ERSystem;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.ers.DAO.ReimbursementDao;
 
@@ -24,7 +25,11 @@ public class App
 //    	rd.getById(2);
     	
     	ReimbursementDao rd = new ReimbursementDao();
-    	System.out.println(rd.getReimbEmp(2));
+    	List<String[]> t = rd.getReimbEmp(8);
+    	
+    	for(String[] r : t) {
+    		System.out.println(r[0]+""+r[5]);
+    	}
 
 //    	ReimbursementDao r = new ReimbursementDao();
 //    	List<Reimbursement> list = r.getAll();

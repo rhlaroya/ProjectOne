@@ -20,10 +20,8 @@ import javax.servlet.ServletException;
 			try {
 				RequestHelper.directProcess(req, resp);
 			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-//			req.getRequestDispatcher("html/employee.html").forward(req, resp);
 		}
 		
 		@Override
@@ -31,10 +29,8 @@ import javax.servlet.ServletException;
 			try {
 				req.getRequestDispatcher(RequestHelper.process(req)).forward(req,resp);
 			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -44,7 +40,6 @@ import javax.servlet.ServletException;
 			try {
 				RequestHelper.directProcess(req, resp);
 			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

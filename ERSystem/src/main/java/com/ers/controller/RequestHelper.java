@@ -7,9 +7,6 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ers.controller.LoginController;
-import com.ers.service.UserService;
-
 public class RequestHelper {
 
 	public static String process(HttpServletRequest req) throws NoSuchAlgorithmException, IOException, ClassNotFoundException {
@@ -18,8 +15,6 @@ public class RequestHelper {
 			return CreateController.createRmbrsmt(req);
 		case "/ERSystem/html/login.go":
 			return LoginController.login(req);
-//		case "/ERSystem/html/login.go":
-//			return UserService.getById(id)
 		default:
 			return "";
 		}	

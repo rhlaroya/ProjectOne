@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.ers.model.UserRole;
@@ -13,15 +14,15 @@ import com.ers.util.ConnectionUtil;
 public class UserRoleDao implements DaoContract<UserRole> {
 
 	@Override
-	public List<UserRole> getAll() {
+	public List<String[]> getAll() {
 		try {
 			Connection conn = ConnectionUtil.connect();
 			String sql = "select * from \"ers_reimbursement-roles\" order by \"ers_users_id\" asc";
-			List<UserRole> list = new ArrayList<>();
+			List<String[]> list = new ArrayList<>();
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				list.add(new UserRole(rs.getInt(1),rs.getString(2)));
+				list.addAll((Collection<? extends String[]>) new UserRole(rs.getInt(1),rs.getString(2)));
 			}
 			return list;
 			

@@ -30,7 +30,7 @@ public class LoginController {
 				roles = users.getRole_id();
 				System.out.println(req.getSession().toString());
 			}
-			
+	
 			if(roles == 1) {	
 				 path = "alltickets.html";
 			} else if(roles == 2) {

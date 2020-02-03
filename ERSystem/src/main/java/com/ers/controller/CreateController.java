@@ -10,6 +10,11 @@ import com.ers.model.Reimbursement;
 import com.ers.service.CreateService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Creates user and reimbursement
+ * @author rhlar
+ *
+ */
 public class CreateController {
 	
 	public static String createRmbrsmt(HttpServletRequest req) {
@@ -26,10 +31,8 @@ public class CreateController {
 		try {
 			CreateService.createReimbursement(id, amount, submitted, resolved, description, receipt, author, resolver, status_id, type_id);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		createFromJson(req);

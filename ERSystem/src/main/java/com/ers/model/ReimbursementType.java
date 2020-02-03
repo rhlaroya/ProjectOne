@@ -49,13 +49,4 @@ public class ReimbursementType {
 	public String toString() {
 		return "ReimbursementType [type_id=" + type_id + ", type=" + type + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

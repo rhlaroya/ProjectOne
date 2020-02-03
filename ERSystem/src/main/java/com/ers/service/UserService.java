@@ -20,11 +20,6 @@ public class UserService {
 	public static User getById(int id) {
 		return new UserDao().getById(id);
 	}
-	
-//	public static User getAll() {
-//		return new UserDao().getAll();
-//	}
-	
 	public int verifyLoginCredientials(String username, String password) throws ClassNotFoundException {
 		int yes = -1;
 		try {
@@ -47,13 +42,12 @@ public class UserService {
 	public void retreiveReimbursements(HttpServletRequest req, HttpServletRequest resp) throws ClassNotFoundException, SQLException {
 		int id = (int) req.getAttribute("id");
 		ReimbursementDao rd = new ReimbursementDao();
-		ArrayList<Reimbursement> reimb 	= rd.getReimbEmp(id);
+		ArrayList<String[]> reimb 	= rd.getReimbEmp(id);
 	}
 	
 	public void retreiveAllReimbursements(HttpServletRequest req, HttpServletRequest resp) throws ClassNotFoundException, SQLException {
-//		int id = (int) req.getAttribute("id");
 		ReimbursementDao r = new ReimbursementDao();
-		List<Reimbursement> allreimb = r.getAll();
+		List<String[]> allreimb = r.getAll();
 	}
 	
 	public void registerUser(User user) {

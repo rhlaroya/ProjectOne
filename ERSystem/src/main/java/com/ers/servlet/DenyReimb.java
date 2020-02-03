@@ -40,10 +40,7 @@ public class DenyReimb extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
-		// get id using par
-		// get current time stamp
 		HttpSession session = request.getSession();
 		int id = (int) session.getAttribute("id");
 		int idreimb = Integer.parseInt(request.getParameter("id"));

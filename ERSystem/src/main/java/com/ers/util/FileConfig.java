@@ -23,7 +23,6 @@ public class FileConfig {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public static String getUrl() {
@@ -44,6 +43,5 @@ public class FileConfig {
 	public static void setPassword(String password) {
 		FileConfig.password = password;
 	}
-	
 }
 

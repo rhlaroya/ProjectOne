@@ -8,7 +8,7 @@ import java.util.List;
  */
 public interface DaoContract <T> {
 	
-	List <T> getAll();
+	List<String[]> getAll();
 	
 	T getById(int id);
 	
